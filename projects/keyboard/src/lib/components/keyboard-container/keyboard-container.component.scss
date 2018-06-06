@@ -1,0 +1,31 @@
+@import '~@angular/material/theming';
+
+// $keyboard-min-width: 568px !default;
+// $keyboard-max-width: 960px !default;
+// $keyboard-padding: 10px !default;
+
+:host {
+  @include mat-elevation(6);
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  // padding: $keyboard-padding;
+  // max-width: $keyboard-max-width;
+  // min-width: $keyboard-min-width;
+  // Initial transformation is applied to start keyboard out of view.
+  transform: translateY(100%);
+
+    // // The dialog container should completely fill its parent overlay element.
+    // width: 100%;
+    // height: 100%;
+  
+    // // Since the dialog won't stretch to fit the parent, if the height
+    // // isn't set, we have to inherit the min and max values explicitly.
+    // min-height: inherit;
+    // max-height: inherit;
+
+  @include cdk-high-contrast {
+    border: solid 1px;
+  }
+}

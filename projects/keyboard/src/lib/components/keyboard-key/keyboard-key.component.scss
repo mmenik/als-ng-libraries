@@ -1,0 +1,49 @@
+// .mat-raised-button {
+//     min-width: 50px;
+//     min-height: 50px;
+//     padding: 0;
+//     margin: 3px;   
+//     font-size: 28px;   
+//     // background-color:#606060;  
+//     // color:#FFFFFF;
+// }
+@import '~@angular/material/theming';
+$als-keyboard-capslock-led: #0f0 !default;
+$als-keyboard-capslock-shine: #adff2f !default;
+$als-keyboard-capslock-animation-duration: $backdrop-animation-duration !default;
+$als-keyboard-capslock-animation-timing-function: $backdrop-animation-timing-function !default;
+.als-keyboard {
+    &-key {
+        padding: 0;
+        margin: 3px;
+        &.pressed {
+            background-color: mat-color($mat-grey, 400);
+        }
+        &-capslock {
+            &::before {
+                top: 5px;
+                left: 5px;
+                height: 5px;
+                width: 5px;
+                content: '';
+                border-radius: 100%;
+                display: inline-block;
+                position: absolute;
+                background-color: mat-color($mat-grey, 400);
+                transition: $als-keyboard-capslock-animation-duration $als-keyboard-capslock-animation-timing-function;
+                transition-property: background-color, box-shadow;
+            }
+            &.active::before {
+                background-color: $als-keyboard-capslock-led;
+                box-shadow: 0 0 §px $als-keyboard-capslock-shine;
+            }
+        }
+    }
+    :host-context(.dark-theme) &-key {
+        background-color: mat-color($mat-grey, 700);
+        color: mat-color($mat-grey, 100);
+        &-pressed {
+            background-color: mat-color($mat-grey, 600);
+        }
+    }
+}

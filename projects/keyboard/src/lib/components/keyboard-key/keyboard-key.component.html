@@ -1,0 +1,5 @@
+<button mat-raised-button class="als-keyboard-key" fxFlex="{{ flex }}" (click)="onKeyPress($event)" [ngClass]="cssClass"
+  [class.active]="active" [class.pressed]="pressed$ | async" [style.width.px]="width" [style.height.px]="height" [style.font-size.px]="size">
+  <ng-container *ngIf="!special">{{value}}</ng-container>
+  <div *ngIf="special" fxLayoutAlign="center center" [class]="icon">{{text}}</div>
+</button>

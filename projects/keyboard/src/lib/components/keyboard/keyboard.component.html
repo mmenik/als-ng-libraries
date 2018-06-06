@@ -1,0 +1,5 @@
+<div fxFlex class="als-keyboard-wrapper" [class.dark-theme]="darkTheme">
+    <div fxLayout="row" fxLayoutAlign="center center" *ngFor="let row of keyboardLayout.keys">
+        <als-keyboard-key *ngFor="let key of row" [key]="key" (keyPress)="onKeyPress($event)"></als-keyboard-key>
+    </div>
+</div>

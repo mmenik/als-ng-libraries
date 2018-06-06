@@ -1,0 +1,26 @@
+<section>
+  <mat-card>
+    <form [formGroup]="form" novalidate>
+      <p>Demo Keyboard</p>
+      <div fxLayout="row" fxLayoutGap="20px">
+        <mat-form-field>
+          <input autocomplete="off" type="text" matInput placeholder="center left" formControlName="text1" alsKeyboard keyboardLayout="numeric"
+            [keyboardTheme]="theme" keyboardPosition="center left" keyboardEnabled="true">
+        </mat-form-field>
+        <mat-form-field>
+          <input autocomplete="off" type="text" matInput placeholder="center center" formControlName="text2" alsKeyboard keyboardLayout="alphanumeric"
+            [keyboardTheme]="theme" keyboardPosition="center center" keyboardEnabled="false">
+          <mat-icon matSuffix>{{visibility_off}}</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+          <input autocomplete="off" type="text" matInput placeholder="bottom right" formControlName="text3" alsKeyboard keyboardLayout="alphanumeric"
+            [keyboardTheme]="theme" keyboardPosition="bottom right">
+          <mat-icon matSuffix>{{visibility_off}}</mat-icon>
+        </mat-form-field>
+        <mat-slide-toggle [checked]="darkTheme" (change)="toggleDarkTheme($event)">
+          Dark theme
+        </mat-slide-toggle>
+      </div>
+    </form>
+  </mat-card>
+</section>
